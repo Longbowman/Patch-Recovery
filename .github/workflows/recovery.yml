@@ -48,6 +48,8 @@ jobs:
         ls -al ../
         mv ../recovery-patched.img recovery.img
         tar cvf fastbootd-recovery.tar recovery.img
+        ls -al ../
+        ls -al .
         echo "before tar"
         md5sum -t fastbootd-recovery.tar >> fastbootd-recovery.tar
         mv fastbootd-recovery.tar fastbootd-recovery.tar.md5

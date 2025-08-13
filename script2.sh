@@ -2,9 +2,11 @@
 
 mkdir unpack
 cd unpack
+echo "before extract"
 ../magiskboot unpack ../r.img
 ../magiskboot cpio ramdisk.cpio extract
 # Reverse fastbootd ENG mode check
+echo "after extract"
 ../magiskboot hexpatch system/bin/recovery e10313aaf40300aa6ecc009420010034 e10313aaf40300aa6ecc0094 # 20 01 00 35
 ../magiskboot hexpatch system/bin/recovery eec3009420010034 eec3009420010035
 ../magiskboot hexpatch system/bin/recovery 3ad3009420010034 3ad3009420010035
@@ -22,6 +24,9 @@ cd unpack
 ../magiskboot hexpatch system/bin/recovery 2001597ae0000054 2001597ae1000054  # ccmp w9, w25, #0, eq ; b.e #0x20 ===> b.ne #0x20
 ../magiskboot hexpatch system/bin/recovery 24f0f2ea30b1681c 24f0f2ea30b9681c
 ../magiskboot hexpatch system/bin/recovery 41010054a0020012f44f48a9 4101005420008052f44f48a9
+echo "after hexpatch"
 ../magiskboot cpio ramdisk.cpio 'add 0755 system/bin/recovery system/bin/recovery'
 ../magiskboot repack ../r.img new-boot.img
-cp new-boot.img ../recovery-patched.img
+echo "after repack"
+pv new-boot.img > ../recovery-patched.img
+echo "finished"

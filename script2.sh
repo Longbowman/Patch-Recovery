@@ -6,8 +6,8 @@ cd unpack
 ../magiskboot cpio ramdisk.cpio extract
 # Reverse fastbootd ENG mode check
 ../magiskboot hexpatch system/bin/recovery e10313aaf40300aa6ecc009420010034 e10313aaf40300aa6ecc0094 # 20 01 00 35
-../magiskboot /magiskboot hexpatch system/bin/recovery eec3009420010034 eec3009420010035
-../magiskboot /magiskboot hexpatch system/bin/recovery 3ad3009420010034 3ad3009420010035
+../magiskboot hexpatch system/bin/recovery eec3009420010034 eec3009420010035
+../magiskboot hexpatch system/bin/recovery 3ad3009420010034 3ad3009420010035
 ../magiskboot hexpatch system/bin/recovery 50c0009420010034 50c0009420010035
 ../magiskboot hexpatch system/bin/recovery 080109aae80000b4 080109aae80000b5
 ../magiskboot hexpatch system/bin/recovery 20f0a6ef38b1681c 20f0a6ef38b9681c

@@ -51,7 +51,7 @@ jobs:
         echo "before tar"
         md5sum -t fastbootd-recovery.tar >> fastbootd-recovery.tar
         mv fastbootd-recovery.tar fastbootd-recovery.tar.md5
-        echo "finished
+        echo "finished"
 
     - name: Upload Recovery
       uses: actions/upload-artifact@v4

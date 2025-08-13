@@ -49,17 +49,16 @@ jobs:
         ls -al .
         echo "after avbtool add hash footer"
         mv ../recovery-patched.img recovery.img
-        after mv
+        echo "after mv"
         ls -al ../
         ls -al .
         tar cvf fastbootd-recovery.tar recovery.img
-        echo "after avbtool add hash footer"
+        echo "after tar"
         ls -al ../
         ls -al .
-        echo "before tar"
+        echo "before  md5"
         md5sum -t fastbootd-recovery.tar >> fastbootd-recovery.tar
         mv fastbootd-recovery.tar fastbootd-recovery.tar.md5
-        echo "after avbtool add hash footer"
         ls -al ../
         ls -al .
         echo "finished"
